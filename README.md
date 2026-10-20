@@ -1,18 +1,26 @@
-# MHusted01 Tap
+# MHusted01 Homebrew tap
 
-## How do I install these formulae?
+Casks for apps by [MHusted01](https://github.com/MHusted01).
 
-`brew install mhusted01/tap/<formula>`
+## Install
 
-Or `brew tap mhusted01/tap` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "mhusted01/tap"
-brew "<formula>"
+```sh
+brew install --cask mhusted01/tap/shortcutlens
 ```
 
-## Documentation
+ShortcutLens is ad-hoc signed and not notarized, so macOS asks you to allow it
+on first launch, and the Accessibility permission must be granted again after
+each upgrade. See the
+[install guide](https://github.com/MHusted01/shortcutlens/blob/main/docs/install.md).
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+Upgrade with `brew upgrade --cask shortcutlens`; remove with
+`brew uninstall --cask shortcutlens` (add `--zap` to also delete settings and packs).
+
+## Bump a cask for a new release
+
+```sh
+brew bump-cask-pr --version X.Y.Z mhusted01/tap/shortcutlens
+```
+
+This downloads the release zip, updates `version` and `sha256`, and opens a
+pull request in this repository.
