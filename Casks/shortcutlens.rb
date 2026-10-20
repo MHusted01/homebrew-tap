@@ -24,14 +24,15 @@ cask "shortcutlens" do
   ]
 
   caveats <<~EOS
-    ShortcutLens is ad-hoc signed and not notarized. On first launch macOS
-    blocks it; open System Settings > Privacy & Security and click
-    "Open Anyway".
+    ShortcutLens is ad-hoc signed and not notarized, so macOS refuses to open
+    it until you remove the quarantine flag:
+      xattr -dr com.apple.quarantine /Applications/ShortcutLens.app
+    Run this again after every upgrade.
 
-    ShortcutLens needs the Accessibility permission. After every install or
-    upgrade, macOS treats the new build as a different app: remove the old
-    ShortcutLens entry under Privacy & Security > Accessibility, then grant
-    it again.
+    ShortcutLens needs the Accessibility permission; the app asks for it on
+    first launch. After every upgrade macOS treats the new build as a
+    different app: remove the old ShortcutLens entry under System Settings >
+    Privacy & Security > Accessibility, then add the app again.
 
     Guide: https://github.com/MHusted01/shortcutlens/blob/main/docs/install.md
   EOS

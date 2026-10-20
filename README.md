@@ -8,9 +8,9 @@ Casks for apps by [MHusted01](https://github.com/MHusted01).
 brew install --cask mhusted01/tap/shortcutlens
 ```
 
-ShortcutLens is ad-hoc signed and not notarized, so macOS asks you to allow it
-on first launch, and the Accessibility permission must be granted again after
-each upgrade. See the
+ShortcutLens is ad-hoc signed and not notarized. After installing and after
+each upgrade, remove the quarantine flag and grant the Accessibility
+permission again; `brew info --cask shortcutlens` shows the steps. See the
 [install guide](https://github.com/MHusted01/shortcutlens/blob/main/docs/install.md).
 
 Upgrade with `brew upgrade --cask shortcutlens`; remove with
