@@ -1,6 +1,6 @@
 cask "shortcutlens" do
-  version "1.4.0"
-  sha256 "c77149e9a89c57c400cb6cb15fbf02e81915734d59301289c9d039149bc9ef99"
+  version "1.5.0"
+  sha256 "6853935e9d202689d4666d8c7c39d07991b4050e178f46c528cef1449e65e7ad"
 
   url "https://github.com/MHusted01/shortcutlens/releases/download/v#{version}/ShortcutLens-#{version}.zip"
   name "ShortcutLens"
