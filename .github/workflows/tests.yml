@@ -38,3 +38,44 @@ jobs:
           codesign --verify --deep /Applications/ShortcutLens.app
           brew uninstall --cask --zap mhusted01/tap/shortcutlens
           test ! -e /Applications/ShortcutLens.app
+
+  formulae:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-26, ubuntu-24.04]
+    runs-on: ${{ matrix.runner }}
+    permissions:
+      contents: read
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Find formulae
+        id: formulae
+        run: |
+          if compgen -G "$(brew --repository mhusted01/tap)/Formula/*.rb" >/dev/null; then
+            echo "present=true" >>"$GITHUB_OUTPUT"
+          else
+            echo "present=false" >>"$GITHUB_OUTPUT"
+          fi
+
+      - name: Style
+        if: steps.formulae.outputs.present == 'true'
+        run: brew style --formulae mhusted01/tap
+
+      - name: Audit
+        if: steps.formulae.outputs.present == 'true'
+        run: brew audit --formula --online --tap=mhusted01/tap
+
+      - name: Install, test and uninstall
+        if: steps.formulae.outputs.present == 'true'
+        run: |
+          brew install mhusted01/tap/reachmap
+          brew test mhusted01/tap/reachmap
+          reachmap --version
+          brew uninstall mhusted01/tap/reachmap
