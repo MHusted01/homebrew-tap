@@ -1,6 +1,6 @@
 # MHusted01 Homebrew tap
 
-Casks for apps by [MHusted01](https://github.com/MHusted01).
+Casks and formulae for apps by [MHusted01](https://github.com/MHusted01).
 
 ## Install
 
@@ -15,6 +15,15 @@ permission again; `brew info --cask shortcutlens` shows the steps. See the
 
 Upgrade with `brew upgrade --cask shortcutlens`; remove with
 `brew uninstall --cask shortcutlens` (add `--zap` to also delete settings and packs).
+
+## Formulae
+
+```sh
+brew install mhusted01/tap/reachmap
+```
+
+The [reachmap](https://github.com/MHusted01/reachmap) release workflow opens a
+pull request here for each release.
 
 ## Bump a cask for a new release
 
