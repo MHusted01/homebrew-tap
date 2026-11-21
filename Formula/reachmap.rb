@@ -5,23 +5,23 @@ class Reachmap < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/MHusted01/reachmap/releases/download/v0.3.0/reachmap-0.3.0-aarch64-apple-darwin.tar.gz"
-      sha256 "5b3ffdfe7482e4c14e111da18bddc6fb296d8528c6ff1a397992e447d24b0424"
+      url "https://github.com/MHusted01/reachmap/releases/download/v0.4.0/reachmap-0.4.0-aarch64-apple-darwin.tar.gz"
+      sha256 "13683a4f80be28f9c281df613e18b01a2ee4e780b5e741d85bba648844ce72bc"
     end
     on_intel do
-      url "https://github.com/MHusted01/reachmap/releases/download/v0.3.0/reachmap-0.3.0-x86_64-apple-darwin.tar.gz"
-      sha256 "25d963beb9f6a8ef18ab696a3890a106ac16329424be69889c34db6a617b6e87"
+      url "https://github.com/MHusted01/reachmap/releases/download/v0.4.0/reachmap-0.4.0-x86_64-apple-darwin.tar.gz"
+      sha256 "b12ae3491cc377c2540cb9d68a31dbca67e88e26b2422f1958e7f1b18913ee01"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/MHusted01/reachmap/releases/download/v0.3.0/reachmap-0.3.0-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "c8077d29d4f4944bfd0c56130c6bfda18487414daa4f2df18ee38488b7511a14"
+      url "https://github.com/MHusted01/reachmap/releases/download/v0.4.0/reachmap-0.4.0-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "e31c7b5536e4aaf332d9bb4478b7cede3ca9d296cac84551bd5f3fbb099d5a65"
     end
     on_intel do
-      url "https://github.com/MHusted01/reachmap/releases/download/v0.3.0/reachmap-0.3.0-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "a2e78ab45e9a8df643857ef2a819d6e595073d56a60b3256b00720b239c8f3b0"
+      url "https://github.com/MHusted01/reachmap/releases/download/v0.4.0/reachmap-0.4.0-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "7e9dffa76e52fd8ccb44290deadd1f1e8fac610c7c435cc18b5eaa53c8f0ba4f"
     end
   end
 
